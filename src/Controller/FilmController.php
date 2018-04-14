@@ -8,10 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class FilmController extends Controller
 {
    
-    public function showFilms()
+    public function showFilm()
     {
         return $this->render('film/index.html.twig', [
-            'controller_name' => 'FilmController',
+            'film' => 'FilmController',
         ]);
     }
 }

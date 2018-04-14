@@ -11,7 +11,7 @@ class CategoryController extends Controller
     public function showFilms()
     {
         return $this->render('category/index.html.twig', [
-            'controller_name' => 'CategoryController',
+            'category' => 'CategoryController',
         ]);
     }
 }
