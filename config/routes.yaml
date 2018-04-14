@@ -8,7 +8,7 @@ moveSite:
 
 login:
     path: /login
-    controller: App\Controller\IndexController::login
+    controller: App\Controller\LoginController::login
 
 category:
     path: /category/{id}
