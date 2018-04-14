@@ -15,7 +15,7 @@ class CategoryController extends Controller
         // \dump(\debug_backtrace()[0]['function']);
         // die();
 
-         return $this->render('category/index.html.twig', [
+         return $this->render('category/showfilms.html.twig', [
              'category' => 'CategoryController',
          ]);
     }

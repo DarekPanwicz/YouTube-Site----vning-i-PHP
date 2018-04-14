@@ -10,7 +10,7 @@ class UserController extends Controller
     
     public function showUserDetails()
     {
-        return $this->render('user/index.html.twig', [
+        return $this->render('user/showuserdetails.html.twig', [
             'users' => 'UserController',
         ]);
     }

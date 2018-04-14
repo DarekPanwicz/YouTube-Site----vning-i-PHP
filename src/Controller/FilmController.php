@@ -10,7 +10,7 @@ class FilmController extends Controller
    
     public function showFilm()
     {
-        return $this->render('film/index.html.twig', [
+        return $this->render('film/showfilm.html.twig', [
             'film' => 'FilmController',
         ]);
     }

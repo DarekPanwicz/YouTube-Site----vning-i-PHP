@@ -10,7 +10,7 @@ class LoginController extends Controller
     
     public function login()
     {
-        return $this->render('login/index.html.twig', [
+        return $this->render('login/login.html.twig', [
             'login' => 'LoginController',
         ]);
     }
