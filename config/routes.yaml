@@ -15,6 +15,6 @@ category:
     controller: App\Controller\CategoryController::showFilms
 
 users:
-    path: /user/{id}
+    path: /users/{id}
     controller: App\Controller\UserController::showUserDetails
 
