@@ -2,9 +2,9 @@ index:
     path: /
     controller: App\Controller\IndexController::index
 
-mFilm:
+film:
     path: /film/{id}
-    controller: App\Controller\filmController::showFilm
+    controller: App\Controller\FilmController::showFilm
 
 login:
     path: /login
