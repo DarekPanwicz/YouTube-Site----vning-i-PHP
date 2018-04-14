@@ -80,8 +80,12 @@
           
           </h3>
 
+           {% block websiteContent %}
+
           <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <button type="button" href="#" class="btn btn-success">kliknij</button>
           <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+
         </div>
       </div>
 
@@ -110,6 +114,8 @@
       </div> <!-- /container -->
 
     </main>
+
+ {% endblock websiteContent  %}
 
     <footer class="container">
       <p>&copy; Company 2017-2018</p>
