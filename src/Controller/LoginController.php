@@ -7,9 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class LoginController extends Controller
 {
-    /**
-     * @Route("/login", name="login")
-     */
+    
     public function login()
     {
         return $this->render('login/index.html.twig', [

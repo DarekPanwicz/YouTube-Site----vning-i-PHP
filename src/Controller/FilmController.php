@@ -7,9 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class FilmController extends Controller
 {
-    /**
-     * @Route("/film", name="film")
-     */
+   
     public function showFilms()
     {
         return $this->render('film/index.html.twig', [

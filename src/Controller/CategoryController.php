@@ -7,9 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class CategoryController extends Controller
 {
-    /**
-     * @Route("/category", name="category")
-     */
+    
     public function showFilms()
     {
         return $this->render('category/index.html.twig', [
