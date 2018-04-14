@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,6 +23,16 @@ class CategoryEntity
      */
     private $name;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\FilmEntity", mappedBy="category")
+     */
+    private $film;
+
+    public function __construct()
+    {
+        $this->film = new ArrayCollection();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -34,6 +46,34 @@ class CategoryEntity
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FilmEntity[]
+     */
+    public function getFilm(): Collection
+    {
+        return $this->film;
+    }
+
+    public function addFilm(FilmEntity $film): self
+    {
+        if (!$this->film->contains($film)) {
+            $this->film[] = $film;
+            $film->addCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFilm(FilmEntity $film): self
+    {
+        if ($this->film->contains($film)) {
+            $this->film->removeElement($film);
+            $film->removeCategory($this);
+        }
 
         return $this;
     }
