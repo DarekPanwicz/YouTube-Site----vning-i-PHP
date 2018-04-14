@@ -10,7 +10,7 @@ class UserController extends Controller
     /**
      * @Route("/user", name="user")
      */
-    public function index()
+    public function showUserDetails()
     {
         return $this->render('user/index.html.twig', [
             'controller_name' => 'UserController',

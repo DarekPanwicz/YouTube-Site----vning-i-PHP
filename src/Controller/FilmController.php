@@ -10,7 +10,7 @@ class FilmController extends Controller
     /**
      * @Route("/film", name="film")
      */
-    public function index()
+    public function showFilms()
     {
         return $this->render('film/index.html.twig', [
             'controller_name' => 'FilmController',

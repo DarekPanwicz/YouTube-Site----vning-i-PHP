@@ -10,7 +10,7 @@ class CategoryController extends Controller
     /**
      * @Route("/category", name="category")
      */
-    public function index()
+    public function showFilms()
     {
         return $this->render('category/index.html.twig', [
             'controller_name' => 'CategoryController',
