@@ -11,6 +11,12 @@ class CategoryController extends Controller
     public function showFilms()
     {
 
+        $category = new CategoryEntity();
+        $category -> setName('Youtube Fishing');
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($category);
+        $entityManager->flush();
+
         // \dump(get_called_class());
         // \dump(\debug_backtrace()[0]['function']);
         // die();
