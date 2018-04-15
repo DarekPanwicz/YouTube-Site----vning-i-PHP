@@ -38,6 +38,11 @@ class CategoryEntity
         $this->film = new ArrayCollection();
     }
 
+    public function __toString() :string
+    {
+        return $this->getName();
+    }
+
     public function getId()
     {
         return $this->id;

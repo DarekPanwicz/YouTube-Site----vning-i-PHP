@@ -22,6 +22,11 @@ categories:
     path: /category
     controller: App\Controller\CategoryController::showCategories
 
+
+categoriesFiler:
+    path: /category/filter/{letter}
+    controller: App\Controller\CategoryController::filter
+
 users:
     path: /users/{id}
     controller: App\Controller\UserController::showUserDetails

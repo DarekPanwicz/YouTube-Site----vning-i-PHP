@@ -9,11 +9,16 @@
     
   
         {% block websiteName %}
+        <h3>
+          Ilosc kategori: {{categories|length}}
+        </h3>
 <h4>
          <ul>
+       
          {% for category in categories %}
+      
          <li>
-         <a href="/category/{{category.getId}}">{{category.getName}}</a>
+            <a href="/category/{{category.getId}}">{{category}}</a>
          </li>
          {% else %}
          Brak kategori
