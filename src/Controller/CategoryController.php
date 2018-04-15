@@ -8,25 +8,18 @@ use App\Entity\CategoryEntity;
 
 class CategoryController extends Controller
 {
-    
     public function showFilms()
     {
+        $category = $this
+            ->getDoctrine()
 
-
-        $category = new CategoryEntity();
-        $category -> setName('Youtube Fishing site');
-
-        //Wywoluje dzialanie i obiekt doctrine 
-        $entityManager = $this->getDoctrine()->getManager();
-        //Laczenie entityMenagera z obiektem. Przekazuje obiekt do metody flusha. cos w stylu git commita
-        $entityManager->persist($category);
-
-        //Wyslanie do bazy, cos w stylu git pusha
-        $entityManager->flush();
-
-        // \dump(get_called_class());
-        // \dump(\debug_backtrace()[0]['function']);
-        // die();
+            // ->getRepository('App\Entity\CategoryEntity')
+            // jest to odnosnik do klasy w encji 
+            ->getRepository(CategoryEntity::class)
+            
+            ->find(1);
+        \dump($category);
+        \dump(CategoryEntity::class);
 
          return $this->render('category/showfilms.html.twig', [
              'category' => 'CategoryController',
@@ -42,7 +35,22 @@ class CategoryController extends Controller
         $entityManager->flush();
         
         return $this->redirectToRoute('index');
-
-       
      }    
+
+
+     public function showCategories()
+     {
+
+        $categories = $this
+            ->getDoctrine()
+            ->getRepository(CategoryEntity::class) 
+            ->findAll();
+   
+
+         return $this->render('category/showcategories.html.twig', [
+             'categories' => $categories,
+         ]);
+
+
+     }
 }

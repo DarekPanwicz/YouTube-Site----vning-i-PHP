@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+        {% block title %}
+
+                Company Name || Category
+
+         {% endblock title %}
+    
+  
+        {% block websiteName %}
+<h4>
+         <ul>
+         {% for category in categories %}
+         <li>
+         <a href="/category/{{category.getId}}">{{category.getName}}</a>
+         </li>
+         {% else %}
+         Brak kategori
+         {% endfor %}
+         </ul>
+</h4>
+         {% endblock websiteName %}
+
+         
+     
+         

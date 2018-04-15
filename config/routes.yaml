@@ -18,6 +18,10 @@ newcategory:
     path: /new/category
     controller: App\Controller\CategoryController::addCategory
 
+categories:
+    path: /category
+    controller: App\Controller\CategoryController::showCategories
+
 users:
     path: /users/{id}
     controller: App\Controller\UserController::showUserDetails
