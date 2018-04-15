@@ -5,6 +5,9 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\CategoryEntity;
+use Symfony\Component\Form\Extension\Core\Type\{SubmitType, TextType};
+use Symfony\Component\HttpFoundation\Request;
+
 
 class CategoryController extends Controller
 {
@@ -26,15 +29,33 @@ class CategoryController extends Controller
          ]);
     }
 
-    public function addCategory()
+    public function addCategory(Request $request)
     {
         $category = new CategoryEntity();
-        $category -> setName('Youtube Fishing site');  
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($category);
-        $entityManager->flush();
+        $form = $this->createFormBuilder($category)
+        ->add('name', TextType::class)
+        ->add('save', SubmitType::class)
+        ->getForm();
+
+        $form->handleRequest($request);
         
-        return $this->redirectToRoute('index');
+        if($form->isSubmitted() && $form->isValid())
+        
+        {
+
+            $category = new CategoryEntity();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($category);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('categories');
+
+
+        }
+
+     
+        
+        
      }    
 
 

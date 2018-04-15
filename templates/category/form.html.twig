@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+        {% block title %}
+
+                Company Name || form
+
+         {% endblock title %}
+
+  
+  
+        {% block websiteName %}
+
+                User Panel
+
+         {% endblock websiteName %}
+
+          {% block websiteContent  %}
+
+             {{form_start(form)}}
+             {{form_widget(form)}}
+             {{form_end(form)}}
+
+         {% endblock websiteContent %}
