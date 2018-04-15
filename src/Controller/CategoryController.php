@@ -56,10 +56,10 @@ class CategoryController extends Controller
 
      public function filter($letter)
      {
-        $lcategories = $this
+        $categories = $this
         ->getDoctrine()
         ->getRepository(CategoryEntity::class) 
-        ->findLetterCategories();
+        ->findLetterCategories($letter);
 
 
      return $this->render('category/showcategories.html.twig', [

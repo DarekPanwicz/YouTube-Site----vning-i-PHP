@@ -30,8 +30,8 @@ class CategoryEntityRepository extends ServiceEntityRepository
 
     public function findLetterCategories($letter)
     {
-        return $this ->createQueryBuilder('c')
-        ->where('c.name LIKE :letter')
+        return $this ->createQueryBuilder('category')
+        ->where('category.name LIKE :letter')
         ->setParameter('letter',$letter. '%')
         ->getQuery()
         ->getResult();
