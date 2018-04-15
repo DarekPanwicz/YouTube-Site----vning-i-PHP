@@ -14,7 +14,15 @@ category:
     path: /category/{id}
     controller: App\Controller\CategoryController::showFilms
 
+newcategory:
+    path: /new/category
+    controller: App\Controller\CategoryController::addCategory
+
 users:
     path: /users/{id}
     controller: App\Controller\UserController::showUserDetails
+    
+
+    
+    
 

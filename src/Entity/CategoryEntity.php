@@ -78,5 +78,5 @@ class CategoryEntity
         return $this;
     }
 
-    
+
 }
