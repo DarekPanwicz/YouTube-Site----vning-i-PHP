@@ -36,33 +36,27 @@ class CategoryController extends Controller
         ->add('name', TextType::class)
         ->add('save', SubmitType::class)
         ->getForm();
-
         $form->handleRequest($request);
         
         if($form->isSubmitted() && $form->isValid())
         
         {
-
-            $category = new CategoryEntity();
+            
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($category);
             $entityManager->flush();
 
             return $this->redirectToRoute('categories');
-
-
         }
-
-     
-        
-        
+        return $this->render('category/form.html.twig', [
+            'form' => $form->createView(),
+        ]);
      }    
 
 
      public function showCategories()
      {
-
-        $categories = $this
+            $categories = $this
             ->getDoctrine()
             ->getRepository(CategoryEntity::class) 
             ->findHiddenCategories();
