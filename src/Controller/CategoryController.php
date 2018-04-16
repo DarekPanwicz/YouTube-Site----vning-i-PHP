@@ -15,6 +15,7 @@ class CategoryController extends Controller
     {
         $category = $this
             ->getDoctrine()
+    //Adding new comment to test GIT
 
             // ->getRepository('App\Entity\CategoryEntity')
             // jest to odnosnik do klasy w encji 
