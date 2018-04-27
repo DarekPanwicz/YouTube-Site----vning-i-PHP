@@ -11,6 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CategoryController extends Controller
 {
+    public function removeTicket($idMember)
+    {
+
+    }
     public function showFilms()
     {
         $category = $this
