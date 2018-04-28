@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\CommentEnity;
+use App\Entity\CommentEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method CommentEnity|null find($id, $lockMode = null, $lockVersion = null)
- * @method CommentEnity|null findOneBy(array $criteria, array $orderBy = null)
- * @method CommentEnity[]    findAll()
- * @method CommentEnity[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method CommentEntity|null find($id, $lockMode = null, $lockVersion = null)
+ * @method CommentEntity|null findOneBy(array $criteria, array $orderBy = null)
+ * @method CommentEntity[]    findAll()
+ * @method CommentEntity[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class CommentEnityRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, CommentEnity::class);
+        parent::__construct($registry, CommentEntity::class);
     }
 
 //    /**
-//     * @return CommentEnity[] Returns an array of CommentEnity objects
+//     * @return CommentEntity[] Returns an array of CommentEntity objects
 //     */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class CommentEnityRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?CommentEnity
+    public function findOneBySomeField($value): ?CommentEntity
     {
         return $this->createQueryBuilder('c')
             ->andWhere('c.exampleField = :val')

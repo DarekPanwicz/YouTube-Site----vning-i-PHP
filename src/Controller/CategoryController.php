@@ -52,8 +52,7 @@ class CategoryController extends Controller
         return $this->render('category/form.html.twig', [
             'form' => $form->createView(),
         ]);
-     }    
-
+     }
 
      public function showCategories()
      {

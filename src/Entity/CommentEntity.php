@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CommentEnityRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CommentEntityRepository")
  */
-class CommentEnity
+class CommentEntity
 {
     /**
      * @ORM\Id()
@@ -22,7 +22,7 @@ class CommentEnity
     private $content;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\UserEnity", inversedBy="comment")
+     * @ORM\ManyToOne(targetEntity="UserEntity", inversedBy="comment")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
@@ -44,12 +44,12 @@ class CommentEnity
         return $this;
     }
 
-    public function getUser(): ?UserEnity
+    public function getUser(): ?UserEntity
     {
         return $this->user;
     }
 
-    public function setUser(?UserEnity $user): self
+    public function setUser(?UserEntity $user): self
     {
         $this->user = $user;
 

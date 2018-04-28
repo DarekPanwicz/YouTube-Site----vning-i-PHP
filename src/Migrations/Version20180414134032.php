@@ -33,7 +33,7 @@ class Version20180414134032 extends AbstractMigration
         $this->addSql('DROP TABLE comment_enity');
         $this->addSql('DROP TABLE film_entity');
         $this->addSql('DROP TABLE film_entity_category_entity');
-        $this->addSql('DROP TABLE user_enity');
+        $this->addSql('DROP TABLE user_entity');
         $this->addSql('DROP TABLE category_entity');
     }
 }

@@ -30,6 +30,10 @@ categoriesFiler:
 users:
     path: /users/{id}
     controller: App\Controller\UserController::showUserDetails
+
+newUsers:
+    path: /new/user
+    controller: App\Controller\UserController::addUser
     
 
     

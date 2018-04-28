@@ -18,7 +18,7 @@ class Version20180415101323 extends AbstractMigration
         $this->addSql('DROP INDEX IDX_C01F9224A76ED395');
         $this->addSql('CREATE TEMPORARY TABLE __temp__comment_enity AS SELECT id, user_id, content FROM comment_enity');
         $this->addSql('DROP TABLE comment_enity');
-        $this->addSql('CREATE TABLE comment_enity (id INTEGER NOT NULL, user_id INTEGER NOT NULL, content CLOB DEFAULT NULL COLLATE BINARY, PRIMARY KEY(id), CONSTRAINT FK_C01F9224A76ED395 FOREIGN KEY (user_id) REFERENCES user_enity (id) NOT DEFERRABLE INITIALLY IMMEDIATE)');
+        $this->addSql('CREATE TABLE comment_enity (id INTEGER NOT NULL, user_id INTEGER NOT NULL, content CLOB DEFAULT NULL COLLATE BINARY, PRIMARY KEY(id), CONSTRAINT FK_C01F9224A76ED395 FOREIGN KEY (user_id) REFERENCES user_entity (id) NOT DEFERRABLE INITIALLY IMMEDIATE)');
         $this->addSql('INSERT INTO comment_enity (id, user_id, content) SELECT id, user_id, content FROM __temp__comment_enity');
         $this->addSql('DROP TABLE __temp__comment_enity');
         $this->addSql('CREATE INDEX IDX_C01F9224A76ED395 ON comment_enity (user_id)');
