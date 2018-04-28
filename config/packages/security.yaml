@@ -10,11 +10,18 @@ security:
                        password: 123
                        roles: 'ROLE_ADMIN'
 
+                   kund:
+                       password: 111
+                       roles: 'ROLE_USER'
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            logout:
+              path: /logout
+              target: /
+
             anonymous: true
             http_basic: ~
 
@@ -30,5 +37,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
 
-          - { path: ^/new, roles: ROLE_ADMIN }
+          - { path: ^/new, roles: [ROLE_ADMIN, ROLE_USER] }
+
         # - { path: ^/profile, roles: ROLE_USER }

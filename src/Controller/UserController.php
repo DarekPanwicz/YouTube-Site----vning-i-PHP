@@ -39,12 +39,31 @@ class UserController extends Controller
                 $entityManager->persist($addUser);
                 $entityManager->flush();
 
-                return $this->redirectToRoute('categories');
+                return $this->redirectToRoute('newUsers');
             }
             return $this->render('user/addUser.html.twig', [
                 'form' => $form->createView(),
             ]);
         }
+    }
+
+    public function showUsers()
+    {
+        $user = $this
+            ->getDoctrine()
+            //Adding new comment to test GIT
+
+            // ->getRepository('App\Entity\CategoryEntity')
+            // jest to odnosnik do klasy w encji
+            ->getRepository(userEntity::class)
+
+            ->findAll();
+
+
+
+        return $this->render('user/showUsers.html.twig', [
+            'users' => $user,
+        ]);
     }
 
 

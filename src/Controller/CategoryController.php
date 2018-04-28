@@ -44,6 +44,11 @@ class CategoryController extends Controller
         {
             
             $entityManager = $this->getDoctrine()->getManager();
+
+            if($this->get('security.authentication_checker')->isGranted('ROLE_ADMIN')){
+                $category->setHidden(false);
+            }
+
             $entityManager->persist($category);
             $entityManager->flush();
 
