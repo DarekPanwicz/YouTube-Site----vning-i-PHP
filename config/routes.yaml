@@ -46,6 +46,9 @@ comment:
 logout:
     path: /logout
 
+remove:
+    path: /remove/category/{id}
+    controller: App\Controller\CategoryController::removeCategory
     
     
 

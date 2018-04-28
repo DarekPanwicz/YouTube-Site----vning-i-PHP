@@ -38,5 +38,7 @@ security:
     access_control:
 
           - { path: ^/new, roles: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/remove, roles: ROLE_ADMIN }
+          - { path: ^/login, roles: ROLE_USER }
 
         # - { path: ^/profile, roles: ROLE_USER }

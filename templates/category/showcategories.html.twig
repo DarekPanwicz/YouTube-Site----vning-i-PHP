@@ -10,7 +10,7 @@
   
         {% block websiteName %}
         <h3>
-          Ilosc kategori: {{categories|length}}
+
         </h3>
 <h4>
          <ul>
@@ -18,7 +18,14 @@
          {% for category in categories %}
       
          <li>
+             <p>
+
             <a href="/category/{{category.getId}}">{{category}}</a>
+
+             {% if is_granted('ROLE_ADMIN') %}
+                 <a class="btn btn-danger" href="/remove/category/{{ category.getId }}"> Delete </a>
+             {%  endif %}
+             </p>
          </li>
          {% else %}
          Brak kategori
