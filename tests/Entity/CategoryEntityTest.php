@@ -18,5 +18,9 @@ class CategoryEntityTest extends TestCase
         $category = new CategoryEntity();
         $this->assertTrue($category->getHidden());
     }
+
+
+
+
 }
 
